@@ -74,3 +74,7 @@ Route::post('/demo', function(){
 ```
 
 For more information, please check the [offical documentation](https://github.com/uploadcare/uploadcare-php)
+
+## License
+
+[MIT license](http://opensource.org/licenses/MIT)
