@@ -1,6 +1,6 @@
 # Uploadcare for Laravel
 
-This is a simple Laravel service provider for Uploadcare's official PHP library.
+This is a simple Laravel service provider for Uploadcare's [official PHP library.](https://github.com/uploadcare/uploadcare-php)
 
 ## Usage
 
@@ -15,7 +15,7 @@ First, add this to your `composer.json` file
 Then, add create `app/config/uploadcare.php` with the following
 
 ```php
-
+<?php
 
 return array(
     'public_key'  => 'YOUR_UPLOADCARE_PUBLIC_KEY_HERE',
@@ -72,3 +72,5 @@ Route::post('/demo', function(){
 </body>
 </html>
 ```
+
+For more information, please check the [offical documentation](https://github.com/uploadcare/uploadcare-php)
