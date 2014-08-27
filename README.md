@@ -23,7 +23,7 @@ return array(
 );
 ```
 
-Finally, add the service provider and alias in your`app/config/app.php`
+Finally, add the service provider and alias in your `app/config/app.php`
 
 ```php
 'providers' => array(
@@ -35,7 +35,7 @@ Finally, add the service provider and alias in your`app/config/app.php`
 'aliases' => array(
     ...
 
-    'Uploadcare'      => 'Altitude\LaravelUploadcare\Facades\Uploadcare',
+    'Uploadcare'        => 'Altitude\LaravelUploadcare\Facades\Uploadcare',
 );
 ```
 
