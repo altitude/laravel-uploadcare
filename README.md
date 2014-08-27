@@ -12,7 +12,7 @@ First, add this to your `composer.json` file
 }
 ```
 
-Then, add create `app/config/uploadcare.php` with the following
+Then, create `app/config/uploadcare.php` with the following
 
 ```php
 <?php
