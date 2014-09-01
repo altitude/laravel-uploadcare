@@ -43,10 +43,9 @@ And you should be good to go.
 
 ## Example
 
-This Service extends [Uploadcare's API class](https://github.com/uploadcare/uploadcare-php/blob/master/src/Uploadcare/Api.php) so you can use any for its methods.
+This Service extends [Uploadcare's API class](https://github.com/uploadcare/uploadcare-php/blob/master/src/Uploadcare/Api.php) so you can use any of its methods.
 
-It also provides the form macro `Form::uploadcare('field_name')` and the helper `Uploadcare::scriptTag()`
-
+It also provides the form macro `Form::uploadcare('field_name')` and the helper `Uploadcare::scriptTag()`  
 
 
 **app/routes.php**
