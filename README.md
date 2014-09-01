@@ -2,7 +2,7 @@
 
 This is a simple Laravel service provider for Uploadcare's [official PHP library.](https://github.com/uploadcare/uploadcare-php)
 
-## Usage
+## Installation
 
 First, add this to your `composer.json` file
 
@@ -43,6 +43,12 @@ And you should be good to go.
 
 ## Example
 
+This Service extends [Uploadcare's API class](https://github.com/uploadcare/uploadcare-php/blob/master/src/Uploadcare/Api.php) so you can use any for its methods.
+
+It also provides the form macro `Form::uploadcare('field_name')` and the helper `Uploadcare::scriptTag()`
+
+
+
 **app/routes.php**
 
 ```php
@@ -66,9 +72,10 @@ Route::post('/demo', function(){
 </head>
 <body>
     <form method="POST" action="/demo">
-        <input type="hidden" name="image" role="uploadcare-uploader">
+        {{Form::uploadcare('image')}}
+        <input type="submit">
     </form>
-    {{Uploadcare::getFacadeRoot()->widget->getScriptTag()}}
+    {{Uploadcare::scriptTag()}}
 </body>
 </html>
 ```

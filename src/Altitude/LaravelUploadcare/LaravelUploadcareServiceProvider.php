@@ -14,6 +14,17 @@ class LaravelUploadcareServiceProvider extends ServiceProvider {
 	protected $defer = false;
 
 	/**
+	* Register custom form macros on package start
+	* @return void
+	*/
+	public function boot()
+	{
+		$this->app['form']->macro('uploadcare', function($field_name){
+			return '<input type="hidden" name="' . $field_name . '" role="uploadcare-uploader">';
+		});
+	}
+
+	/**
 	* Register the service provider.
 	*
 	* @return void
@@ -25,7 +36,7 @@ class LaravelUploadcareServiceProvider extends ServiceProvider {
 			$public  = Config::get('uploadcare.public_key');
 			$private = Config::get('uploadcare.private_key');
 			
-			return new Uploadcare\Api($public, $private);
+			return new UploadcareService($public, $private);
 		});
 	}
 
