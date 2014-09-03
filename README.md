@@ -45,8 +45,7 @@ And you should be good to go.
 
 This Service extends [Uploadcare's API class](https://github.com/uploadcare/uploadcare-php/blob/master/src/Uploadcare/Api.php) so you can use any of its methods.
 
-It also provides the form macro `Form::uploadcare('field_name')` and the helper `Uploadcare::scriptTag()`  
-
+It also provides the form macro `Form::uploadcare($field_name, $value = null, $options = array())`.
 
 **app/routes.php**
 
@@ -71,7 +70,7 @@ Route::post('/demo', function(){
 </head>
 <body>
     <form method="POST" action="/demo">
-        {{Form::uploadcare('image')}}
+        {{Form::uploadcare('image', null, array('data-crop' => '3:4'))}}
         <input type="submit">
     </form>
     {{Uploadcare::scriptTag()}}
