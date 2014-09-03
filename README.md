@@ -8,7 +8,7 @@ First, add this to your `composer.json` file
 
 ```js
 "require": {
-    "altitude/laravel-uploadcare": "~1.2.0"
+    "altitude/laravel-uploadcare": "~1.2"
 }
 ```
 
