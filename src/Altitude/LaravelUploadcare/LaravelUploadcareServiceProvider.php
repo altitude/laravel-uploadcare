@@ -19,8 +19,14 @@ class LaravelUploadcareServiceProvider extends ServiceProvider {
 	*/
 	public function boot()
 	{
-		$this->app['form']->macro('uploadcare', function($field_name){
-			return '<input type="hidden" name="' . $field_name . '" role="uploadcare-uploader">';
+		$this->app['form']->macro('uploadcare', function($name, $value=null, $options=array()){
+			
+			$options = array_merge($options, array(
+				'role'  => 'uploadcare-uploader',
+				'value' => $value,
+			));
+			
+			return $this->app['form']->input('hidden', $name, $value, $options);
 		});
 	}
 
