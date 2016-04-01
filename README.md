@@ -8,11 +8,12 @@ First, add this to your `composer.json` file
 
 ```js
 "require": {
+    "illuminate/html": "5.*",
     "altitude/laravel-uploadcare": "~1.2"
 }
 ```
 
-Then, create `app/config/uploadcare.php` with the following
+Then, create `config/uploadcare.php` with the following
 
 ```php
 <?php
@@ -23,19 +24,22 @@ return array(
 );
 ```
 
-Finally, add the service provider and alias in your `app/config/app.php`
+Finally, add the service provider and alias in your `config/app.php`
 
 ```php
 'providers' => array(
     ...
 
-    'Altitude\LaravelUploadcare\LaravelUploadcareServiceProvider',
+    Illuminate\Html\HtmlServiceProvider::class,
+    Altitude\LaravelUploadcare\LaravelUploadcareServiceProvider::class,
 );
 
 'aliases' => array(
     ...
 
-    'Uploadcare'        => 'Altitude\LaravelUploadcare\Facades\Uploadcare',
+    'Form' => Illuminate\Html\FormFacade::class,
+    'HTML' => Illuminate\Html\HtmlFacade::class,
+    'Uploadcare' => Altitude\LaravelUploadcare\Facades\Uploadcare::class,
 );
 ```
 
@@ -47,7 +51,7 @@ This Service extends [Uploadcare's API class](https://github.com/uploadcare/uplo
 
 It also provides the form macro `Form::uploadcare($field_name, $value = null, $options = array())`.
 
-**app/routes.php**
+**app/Http/routes.php**
 
 ```php
 
@@ -61,7 +65,7 @@ Route::post('/demo', function(){
 
 ```
 
-**app/views/demo/demo.blade.php**
+**resources/views/demo/demo.blade.php**
 
 ```php
 <html>
@@ -70,10 +74,10 @@ Route::post('/demo', function(){
 </head>
 <body>
     <form method="POST" action="/demo">
-        {{Form::uploadcare('image', null, array('data-crop' => '3:4'))}}
+        {!! Form::uploadcare('image', null, array('data-crop' => '3:4')) !!}
         <input type="submit">
     </form>
-    {{Uploadcare::scriptTag()}}
+    {!! Uploadcare::scriptTag() !!}
 </body>
 </html>
 ```
