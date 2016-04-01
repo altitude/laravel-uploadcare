@@ -9,7 +9,7 @@ First, add this to your `composer.json` file
 ```js
 "require": {
     "illuminate/html": "5.*",
-    "altitude/laravel-uploadcare": "~1.2"
+    "altitude/laravel-uploadcare": "~2.0.0"
 }
 ```
 
@@ -83,6 +83,10 @@ Route::post('/demo', function(){
 ```
 
 For more information, please check the [offical documentation](https://github.com/uploadcare/uploadcare-php)
+
+## Laravel 4.x
+
+This library is still available for Laravel 4.x. Please use the older 1.x releases and check their README.md for usage.
 
 ## License
 
