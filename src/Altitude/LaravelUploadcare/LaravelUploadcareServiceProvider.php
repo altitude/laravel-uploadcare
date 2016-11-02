@@ -26,7 +26,7 @@ class LaravelUploadcareServiceProvider extends ServiceProvider {
 				'value' => $value,
 			));
 			
-			return $this->app['form']->input('hidden', $name, $value, $options);
+			return $this->input('hidden', $name, $value, $options);
 		});
 	}
 
